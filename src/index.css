@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   🎨 Brand Theme Variables
+   =============================== */
+:root {
+  --rdbGold: #d4af37;
+  --rdbRoyal: #4b1d0e;
+  --rdbIvory: #fffaf3;
+  --rdbBlush: #f7e9dc;
+  --rdbShadow: rgba(75, 29, 14, 0.15);
+}
+
+/* ===============================
+   🌸 Global Styles
+   =============================== */
+body {
+  @apply font-sans bg-[var(--rdbIvory)] text-gray-800 scroll-smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===============================
+   💎 Soft Shadows
+   =============================== */
+.shadow-soft {
+  box-shadow: 0 6px 20px var(--rdbShadow);
+}
+
+.shadow-gold {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ===============================
+   ✨ Hover Transitions
+   =============================== */
+button,
+a {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover elevation */
+.group:hover a,
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   🪶 Scrollbar Styling
+   =============================== */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--rdbGold);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--rdbIvory);
+}
+
+/* ===============================
+   💫 Button Shimmer (for Hero)
+   =============================== */
+button,
+a {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after,
+a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-25deg);
+}
+
+button:hover::after,
+a:hover::after {
+  left: 125%;
+  transition: all 0.75s ease-in-out;
+}
+
+/* ===============================
+   🌿 Category Cards Hover
+   =============================== */
+.group:hover img {
+  transform: scale(1.05);
+}
+
+.group:hover div {
+  color: var(--rdbRoyal);
+}
+
+/* ===============================
+   🛍 Footer Styling
+   =============================== */
+footer a:hover svg {
+  color: var(--rdbGold);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+footer {
+  @apply text-sm leading-relaxed;
+}
+
+/* ===============================
+   🌸 Animations
+   =============================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* ===============================
+   🌺 Responsive Tweaks
+   =============================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 12px var(--rdbShadow);
+  }
+
+  button,
+  a {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   💫 Custom Utilities (Optional)
+   =============================== */
+.text-gradient {
+  background: linear-gradient(90deg, var(--rdbGold), var(--rdbRoyal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold {
+  border-color: var(--rdbGold);
+}
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--rdbGold);
+  border-radius: 10px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--rdbIvory);
+}
